@@ -1,0 +1,23 @@
+$fg: #f6f5f7;
+$fg-sidebar: #5c4d8a;
+$fg-player: #f6f5f7;
+$bg: #1e1147;
+$bg-sidebar: #29175e;
+$bg-player: #170847;
+$bg-player-slider: #33275e;
+$shadow: #ddd;
+$playerAuthor: #5c4d8a;
+
+$accent: #f60193;
+
+:root[data-theme='light'] {
+	$fg: #1e1147;
+	$fg-sidebar: #b1aebe;
+	$fg-player: #959595;
+	$bg: #f6f5f7;
+	$bg-sidebar: #e9e9e9;
+	$bg-player: #111111;
+	$bg-player-slider: #2c2c2c;
+	$shadow: #333333;
+	$playerAuthor: #636363;
+}

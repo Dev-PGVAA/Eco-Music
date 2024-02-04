@@ -1,0 +1,138 @@
+@import '@/configs/config.scss';
+
+.playerGroup {
+	@apply bottom-0 fixed grid w-full h-[90px];
+	grid-template-columns: 288px auto 300px;
+	background-color: $bg-player;
+	color: $fg-player;
+	svg {
+		@apply inline-flex;
+		margin: 10px 10px 0 10px;
+
+		&:active {
+			transition: 0.1s ease-in-out;
+			scale: 0.9;
+		}
+	}
+	section {
+		@apply justify-center inline-flex w-full;
+		input {
+			@apply w-[70%] h-1 rounded-full;
+			-webkit-appearance: none;
+			margin: 10px 20px 0 20px;
+			&::-moz-range-progress {
+				@apply h-1 rounded-s-full;
+				background: linear-gradient(
+					to right,
+					#1c78d5 0%,
+					#743dae 50%,
+					$accent 100%
+				);
+			}
+			&::-moz-range-track {
+				@apply h-1;
+				background: $bg-player-slider;
+			}
+			&::-moz-range-thumb {
+				@apply cursor-pointer h-3 w-3 border-none rounded-full;
+				background: $accent;
+			}
+			&::-webkit-slider-thumb {
+				@apply cursor-pointer h-3 w-3 border-none rounded-full;
+				-webkit-appearance: none;
+				background: $accent;
+			}
+		}
+	}
+	section:nth-child(1) {
+		@apply w-72 pl-7;
+		justify-content: left;
+		section {
+			@apply ml-5 mt-4 text-left;
+			div {
+				@apply flex;
+				span {
+					@apply -translate-y-2 translate-x-1;
+					span {
+						text-align: center;
+					}
+				}
+			}
+		}
+		h3 {
+			color: #fefefe;
+		}
+		h5 {
+			@apply text-[16px];
+			color: $playerAuthor;
+		}
+		h3,
+		h5 {
+			@apply max-w-40;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			cursor: default;
+		}
+		img {
+			@apply mt-3 rounded-xl h-[60px] w-[60px];
+			box-shadow: 0 0 1.5px 0.5px #ddd;
+		}
+	}
+	section:nth-child(2) {
+		@apply text-center block mx-2;
+		section {
+			@apply h-fit;
+		}
+		button svg {
+			@apply cursor-pointer;
+		}
+	}
+	section:nth-child(3) {
+		@apply justify-center;
+		svg {
+			@apply mt-8 cursor-pointer mr-5;
+			transition: 0.1s ease;
+			&:active {
+				scale: 0.9;
+			}
+		}
+	}
+}
+@media (max-height: 750px) {
+	.playerGroup {
+		grid-template-columns: 210px auto 250px;
+		section:nth-child(1) {
+			img {
+				@apply w-12 h-12 mt-5;
+			}
+			section {
+				@apply scale-90 mt-[18px] ml-1;
+				h3,
+				h5 {
+					@apply max-w-32;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+				}
+			}
+		}
+		section:nth-child(2) {
+			svg {
+				scale: 0.9;
+				&:active {
+					scale: 0.8;
+				}
+			}
+		}
+		section:nth-child(3) {
+			svg {
+				@apply mr-2;
+				scale: 0.85;
+				&:active {
+					scale: 0.8;
+				}
+			}
+		}
+	}
+}

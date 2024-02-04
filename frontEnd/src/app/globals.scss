@@ -1,0 +1,48 @@
+@import '@/configs/config.scss';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+	margin: 0;
+	padding: 0;
+	transition: all 0.3s ease;
+	&::-webkit-scrollbar {
+		width: 0;
+	}
+}
+
+html,
+body {
+	color: $fg;
+	background-color: $bg;
+	height: calc(100% - 45px);
+	font-variant-numeric: tabular-nums;
+
+	overflow: hidden;
+}
+body {
+	display: grid;
+	grid-template-columns: auto 100%;
+	height: 100vh;
+	overflow-x: hidden;
+}
+main {
+	overflow: auto;
+	padding: 30px 30px 20px 20px;
+}
+svg {
+	width: fit-content;
+	height: fit-content;
+}
+@media (max-height: 780px) {
+	main {
+		width: calc(100vw - 222px);
+	}
+}
+@media (min-height: 780px) {
+	main {
+		width: calc(100vw - 318px);
+	}
+}
