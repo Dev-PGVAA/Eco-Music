@@ -1,6 +1,6 @@
 import { Play, PlayBack, PlayNext, Stop } from '@/data/data.icons'
 import { musics } from '@/data/data.musics'
-import { MusicContext } from '@/providers/MusicId.provider'
+import { MusicContext } from '@/providers/Music.provider'
 import { FC, useContext, useEffect } from 'react'
 
 const buttons: FC = () => {
@@ -20,6 +20,23 @@ const buttons: FC = () => {
 				document.querySelector('audio')!.play()
 			})
 		})
+
+		document.addEventListener('keydown', event => {
+			if (event.code === 'Space') {
+				setIsPlaying(!isPlaying)
+			}
+			if (event.code === 'KeyK') {
+				setTimeout(() => {
+					setMusic('back')
+				}, 300)
+			}
+			if (event.code === 'KeyL') {
+				setTimeout(() => {
+					setMusic('next')
+				}, 300)
+			}
+		})
+
 		isPlaying ? audio.play() : audio.pause()
 	})
 

@@ -1,7 +1,7 @@
 'use client'
 
 import { musics } from '@/data/data.musics'
-import { MusicContext } from '@/providers/MusicId.provider'
+import { MusicContext } from '@/providers/Music.provider'
 import {
 	ChangeEvent,
 	FC,
@@ -24,14 +24,19 @@ const slider: FC = () => {
 	const [remainingTime, setRemainingTime] = useState(secToMin(0))
 	const [isDrag, setIsDrag] = useState(false)
 
-	const { id, setId } = useContext(MusicContext)
+	const { id, setId, isShowPlayer, setIsShowPlayer } = useContext(MusicContext)
 
 	useEffect(() => {
-		if (localStorage.getItem('musicID')) {
-			setTitle(musics[id].title)
-		} else {
-			document.querySelector('footer')!.style.bottom = '-90px'
+		if (localStorage.getItem('musicID') !== null) {
+			setIsShowPlayer(true)
 		}
+
+		if (isShowPlayer) {
+			setTitle(musics[id].title)
+			document.querySelector('footer')!.style.bottom = '0'
+		} else document.querySelector('footer')!.style.bottom = '-90px'
+
+		console.log()
 	})
 	useEffect(() => {
 		setId(Number(localStorage.getItem('musicID')))

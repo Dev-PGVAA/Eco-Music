@@ -1,5 +1,5 @@
 'use client'
-import MusicProvider from '@/providers/MusicId.provider'
+import MusicProvider from '@/providers/Music.provider'
 import { PropsWithChildren } from 'react'
 import Player from '../player/player'
 

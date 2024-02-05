@@ -1,7 +1,7 @@
 @import '@/configs/config.scss';
 
 .home {
-	@apply w-full h-[600%] grid;
+	@apply w-full h-auto grid;
 	grid-template-rows: 100px 50vh 30vh;
 	.main:nth-child(2) {
 		@apply grid grid-cols-2;

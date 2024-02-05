@@ -1,5 +1,5 @@
 import { Play, Stop } from '@/data/data.icons'
-import { MusicContext } from '@/providers/MusicId.provider'
+import { MusicContext } from '@/providers/Music.provider'
 import { FC, useContext } from 'react'
 
 import style from '../discoverMusic.module.scss'

@@ -1,5 +1,6 @@
 export type TypeId = number
 export type TypePlaying = boolean
+export type TypeIsShowPlayer = boolean
 export type TypeMusic = {
 	id: string
 	title: string

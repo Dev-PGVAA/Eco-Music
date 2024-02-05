@@ -4,7 +4,7 @@ import { Minus, Plus } from 'lucide-react'
 import { FC, useContext, useState } from 'react'
 
 import PinLimits from '@/components/ui/pinLimits'
-import { MusicContext } from '@/providers/MusicId.provider'
+import { MusicContext } from '@/providers/Music.provider'
 import cn from 'clsx'
 import style from '../discoverMusic.module.scss'
 
@@ -13,17 +13,18 @@ const recommendedMusic: FC = () => {
 
 	const [likeMusics, setLikeMusics] = useState(musics)
 
-	const { id, setId, isPlaying, setIsPlaying } = useContext(MusicContext)
+	const { id, setId, isPlaying, setIsPlaying, setIsShowPlayer } =
+		useContext(MusicContext)
 
 	const playMusic = (index: number) => {
 		if (id === index) {
 			setIsPlaying(!isPlaying)
 		} else {
-			localStorage.setItem('id', index.toString())
 			setId(index)
 			setIsPlaying(true)
 		}
-		console.log(id, isPlaying)
+		localStorage.setItem('musicID', index.toString())
+		setIsShowPlayer(true)
 	}
 
 	const setLikeMusic = (item: number) => {

@@ -6,14 +6,14 @@ export const URL = {
 	myMusic: '/my-music',
 	singer: '/singer',
 	search: '/search',
-	settings: '/settings',
-	statistic: '/statistic',
+	settings: '/auth', // settings,
+	admin: '/admin',
+	auth: '/auth',
 }
 
 class settingsURLs {
 	private root = '/settings'
 
-	auth = `${this.root}/auth`
 	// ...
 }
 

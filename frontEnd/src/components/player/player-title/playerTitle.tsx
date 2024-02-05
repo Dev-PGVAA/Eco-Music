@@ -2,7 +2,7 @@
 
 import PinLimits from '@/components/ui/pinLimits'
 import { musics } from '@/data/data.musics'
-import { MusicContext } from '@/providers/MusicId.provider'
+import { MusicContext } from '@/providers/Music.provider'
 import { useContext } from 'react'
 
 const title = () => {

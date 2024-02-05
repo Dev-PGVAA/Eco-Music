@@ -1,6 +1,6 @@
 'use client'
 
-import { MusicContext } from '@/providers/MusicId.provider'
+import { MusicContext } from '@/providers/Music.provider'
 import { Heart, List, Repeat, Repeat1, Shuffle } from 'lucide-react'
 import { FC, useContext, useEffect, useState } from 'react'
 
